@@ -1,0 +1,65 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1620759905,
+        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nix-direnv": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1624636962,
+        "narHash": "sha256-5g50wkRDtaePhKb0IbCSmGrjtrmw0qxpWYakuCh4w7I=",
+        "owner": "hoverbear",
+        "repo": "nix-direnv",
+        "rev": "d3ac9914f2d6a53d6ae30b1c3df92b77968386d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hoverbear",
+        "ref": "merged",
+        "repo": "nix-direnv",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1665296151,
+        "narHash": "sha256-uOB0oxqxN9K7XGF1hcnY+PQnlQJ+3bP2vCn/+Ru/bbc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "14ccaaedd95a488dd7ae142757884d8e125b3363",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nix-direnv": "nix-direnv",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
