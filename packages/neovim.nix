@@ -11,6 +11,12 @@ neovim.override {
     packages.myVimPackage = with vimPlugins; {
       start = [
         LanguageClient-neovim
+        nvim-web-devicons
+        nvim-tree-lua
+        bufferline-nvim
+        lualine-nvim
+        indent-blankline-nvim
+        vim-startify
         vim-nix
         telescope-nvim
         plenary-nvim
@@ -20,6 +26,7 @@ neovim.override {
         cmp-nvim-lsp
         gitsigns-nvim
         kanagawa-nvim
+        nvim-fzf
         which-key-nvim
         (nvim-treesitter.withPlugins (plugins: tree-sitter.allGrammars))
       ];

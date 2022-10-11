@@ -66,7 +66,31 @@ cmd('colorscheme kanagawa')
 -- Gitsigns
 require('gitsigns').setup()
 
--- LSP Settings
+-- indent-blankline
+vim.opt.list = true
+vim.opt.listchars:append "eol:↴"
+require('indent_blankline').setup {
+	show_end_of_line = true,
+}
+
+-- nvim-tree
+require('nvim-tree').setup {
+	filters = {
+		dotfiles = true,
+	},
+}
+
+-- bufferline
+require('bufferline').setup{}
+
+-- lualine
+require('lualine').setup {
+	options = {
+		theme = 'auto'
+	}
+}
+
+-- lsp settings
 local lspconfig = require('lspconfig')
 
 local on_attach = function(client,bufnr)
@@ -116,7 +140,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-local servers = { "Rust_analyzer", "rnix" }
+local servers = { "gopls", "pyright", "rust_analyzer", "html", "jsonls", "cssls", "sumneko_lua", "rnix", "bashls" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup { capabilities = capabilities, on_attach = on_attach }
 end
@@ -184,3 +208,6 @@ require'nvim-treesitter.configs'.setup {
 		additional_vim_regex_highlighting = false,
 	},
 }
+
+-- nvim-fzf
+require('fzf')
